@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Gilroy-Black;
+  src: url(./fonts/Gilroy-Black.ttf);
+}
+@font-face {
+  font-family: Gilroy-Medium;
+  src: url(./fonts/Gilroy-Medium.ttf);
+}
+@font-face {
+  font-family: Gilroy-Regular;
+  src: url(./fonts/Gilroy-Regular.ttf);
+}
+@font-face {
+  font-family: Gilroy-ExtraBold;
+  src: url(./fonts/Gilroy-ExtraBold.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (max-width: 800px) {
+  html, body {
+  overflow-x: hidden;
+  }
 }
+@media (max-width: 514px) {
+  .bookimage{
+    margin-top: -420px !important;
+    width: 175px !important;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  h1{
+    font-size: 30px !important;
+    padding-top: 380px !important;
+    margin-left: 44px !important;
+  }
+
+  h2{
+    margin-left: 47px !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+*{
+  box-sizing: border-box;
+}
+
+h1{
+  margin-left: 290px;
+padding-top: 116px;
+font-size: 40px;
+overflow:hidden;
+color: #2B2B2B;
+font-family: Gilroy-ExtraBold;
+}
+
+.aico{
+  margin-left: 72px;
+ 
+}
+
+
+
+h2{
+  margin-left: 290px;
+  font-family: Gilroy-Regular;
+  font-size: 20px;
+  margin-top: -19px;
+  color: #727272;
+  overflow:hidden;
+  }
+
+
+/* searchpage */
+.bookimage{
+  width: 185px;
+  height: 275px;
+  float:left;
+  
+  margin-top: -90px;
+  border-radius: 16px;
+  margin-left: 35px;
+}
+/* //homepage */
+.postimage{
+  width: 185px;
+  height: 275px;
+  display: inline-block;
+  margin-top: 60px;
+  border-radius: 16px;
+  margin-left: 35px;
+}
+/* @media (max-width: 841px) {
+  .postimage {
+  overflow-x: hidden;
+  } */
+.post{
+margin: 0 auto;
+}
+a{
+  font-family: Gilroy-Regular ;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 20px;
+}
+
+nav {
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.tf_label{
+  box-shadow: none !important;
+}
+.loginPage {
+  width: 100vw;
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.loginPage p {
+  font-size: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* GOOGLE BUTTOn */
+.login-with-google-btn {
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 5px 16px 12px 42px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #757575;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 12px 11px;
+}
+.login-with-google-btn:hover {
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+.login-with-google-btn:active {
+  background-color: #eeeeee;
+}
+.login-with-google-btn:focus {
+  outline: none;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25),
+    0 0 0 3px #c8dafc;
+}
+.login-with-google-btn:disabled {
+  filter: grayscale(100%);
+  background-color: #ebebeb;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
 }
